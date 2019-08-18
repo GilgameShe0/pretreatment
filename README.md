@@ -59,15 +59,14 @@
         draw_img = cv2.drawContours(original_img.copy(), [box], -1, (0,0,255))
     ```
 6. 裁剪
+
     cropImg = img_gray[y1_:y2_, x1_:x2_]
 
 ##### 判断图像是否经过预处理
     
 未强调左边背景部分，裁剪出左半边图并转为灰度图。将图片做镜面翻转，并使用8*8的缩略图，将原图与镜面图灰度值相减（使用镜面图是为了减少误差），观察相减后左边第一列灰度值。
-    
+
     ```python
-        
-        import cv2
         img = cv2.imread("pretreatment/09002298.png",0)
 
         height, width = img.shape[:2]
@@ -94,8 +93,6 @@
         print(img2)
         print('相减后灰度值：')
         print(sub)
-
-
     ```
 
     ```bash
